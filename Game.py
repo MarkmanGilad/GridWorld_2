@@ -18,6 +18,9 @@ agent = Random_Agent(env)
 # print(agent.Policy_Iteration())
 # print ('Value*: \n', agent.Value)
 # print ('Policy*: \n', agent.Policy)
+# agent.Value_iteration()
+# print ('Value*: \n', agent.Value)
+# print ('Policy*: \n', agent.Policy)
 
 def main ():
     run = True

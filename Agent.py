@@ -44,6 +44,10 @@ class AI_Agent:
     def Policy_Iteration (self):
         pass
 
+    
+    def Value_Iteration():
+        pass
+
     def __call__(self, state):
         return self.get_action(state)
     
