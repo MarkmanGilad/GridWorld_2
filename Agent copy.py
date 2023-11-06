@@ -37,6 +37,20 @@ class AI_Agent:
 
     def policy_eval (self):
         accuracy = 0.0001
+        acc = 1
+        while acc > accuracy:
+            acc = 0
+            for row in range(ROWS):
+                for col in range(COLS):
+                    state = row,col
+                    if self.env.board[state] != 0:
+                        continue
+                    old_value = self.Value[state]
+                    action = Action(self.Policy[state])
+                    new_state, reward = self.env(state, action)
+                    new_value = reward + self.gamma * self.Value[new_state]
+                    self.Value[state] = new_value
+                    acc = max(acc, abs(old_value - new_value))
         
 
     def Policy_improv (self):
